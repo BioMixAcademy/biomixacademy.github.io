@@ -2,7 +2,29 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BioMix Academy | אימון אישי וליווי מקצועי</title>
+<meta name="description" content="תהליך אימון וליווי אישי בהובלת יאיר שני, המותאם למטרות, לשגרה ולחיים שלך.">
+<meta name="theme-color" content="#03070D">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="canonical" href="https://biomixacademy.github.io/">
+<link rel="icon" type="image/png" href="./assets/biomix-favicon-512x512.png">
+<link rel="apple-touch-icon" href="./assets/biomix-favicon-512x512.png">
+<meta property="og:locale" content="he_IL">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BioMix Academy">
+<meta property="og:title" content="BioMix Academy | תהליך שמותאם לחיים שלך">
+<meta property="og:description" content="אימונים אישיים וליווי מקצועי עם יאיר שני. מתחילים בתהליך שמתאים למטרות ולשגרת החיים שלך.">
+<meta property="og:url" content="https://biomixacademy.github.io/">
+<meta property="og:image" content="https://biomixacademy.github.io/assets/biomix-social-og-1200x630.png?v=2">
+<meta property="og:image:secure_url" content="https://biomixacademy.github.io/assets/biomix-social-og-1200x630.png?v=2">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="BioMix Academy, אימון אישי וליווי מקצועי עם יאיר שני">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BioMix Academy | תהליך שמותאם לחיים שלך">
+<meta name="twitter:description" content="אימונים אישיים וליווי מקצועי המותאמים למטרות ולשגרת החיים שלך.">
+<meta name="twitter:image" content="https://biomixacademy.github.io/assets/biomix-social-og-1200x630.png?v=2">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -10,23 +32,7 @@
 <helmet>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>BioMix | שינוי הרכב הגוף לגברים 35+</title>
-<meta name="description" content="שיטת BioMix של יאיר שני. אימונים קצרים וממוקדים, תזונה פשוטה וליווי אישי בגובה העיניים. אונליין ופנים אל פנים.">
-<meta name="theme-color" content="#03070D">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<link rel="canonical" href="https://biomixacademy.github.io/">
-<link rel="icon" type="image/png" href="./assets/biomix-favicon-512x512.png">
-<link rel="apple-touch-icon" href="./assets/biomix-favicon-512x512.png">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="he_IL">
-<meta property="og:site_name" content="BioMix Academy">
-<meta property="og:title" content="BioMix | שינוי הרכב הגוף לגברים 35+">
-<meta property="og:description" content="פחות כרס. יותר כוח. יותר שליטה. תהליך שמתאים לחיים שלך.">
-<meta property="og:url" content="https://biomixacademy.github.io/">
-<meta property="og:image" content="https://biomixacademy.github.io/assets/biomix-social-og-1200x630.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap">
@@ -272,7 +278,10 @@ button{font:inherit}
 
           <div style="display:flex; flex-direction:column; gap:7px; margin-top:16px;">
             <label for="bx-msg" style="font-size:.94rem; font-weight:700;">משהו שחשוב שיאיר ידע</label>
-            <textarea id="bx-msg" name="הערות" rows="3" maxLength="1000" style="padding:13px 15px; border-radius:14px; border:1px solid var(--bx-border,rgba(11,132,216,.24)); background:rgba(3,7,13,.7); color:var(--bx-text,#F4F7FB); font-family:inherit; font-size:1rem; line-height:1.65; resize:vertical; transition:border-color .3s ease, background .3s ease;" style-focus="border-color:#FFB536; background:rgba(11,132,216,.12)"></textarea>
+            <div style="position:relative; display:flex;">
+              <textarea id="bx-msg" name="הערות" rows="3" maxLength="300" onInput="{{ onMsgInput }}" aria-describedby="bx-msg-count" style="flex:1; padding:13px 15px 32px; border-radius:14px; border:1px solid var(--bx-border,rgba(11,132,216,.24)); background:rgba(3,7,13,.7); color:var(--bx-text,#F4F7FB); font-family:inherit; font-size:1rem; line-height:1.65; resize:vertical; transition:border-color .3s ease, background .3s ease;" style-focus="border-color:#FFB536; background:rgba(11,132,216,.12)"></textarea>
+              <span id="bx-msg-count" aria-live="polite" style="position:absolute; bottom:10px; left:14px; direction:ltr; unicode-bidi:embed; font-size:.82rem; font-weight:700; font-variant-numeric:tabular-nums; color:{{ msgCountColor }}; pointer-events:none;">{{ msgCount }}</span>
+            </div>
           </div>
 
           <label for="bx-consent" style="display:flex; align-items:flex-start; gap:12px; margin-top:18px; padding:14px 16px; border-radius:16px; border:1px solid var(--bx-border,rgba(11,132,216,.24)); background:rgba(3,7,13,.5); font-size:.95rem; line-height:1.65; color:var(--bx-muted,#9CB1C9); cursor:pointer;">
@@ -319,13 +328,13 @@ button{font:inherit}
           <svg ref="{{ whoSvgRef }}" aria-hidden="true" focusable="false" style="position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; overflow:visible;">
             <defs>
               <filter id="bxArrowGlow" x="-30%" y="-30%" width="160%" height="160%">
-                <feGaussianBlur stdDeviation="2.4" result="b"></feGaussianBlur>
+                <feGaussianBlur stdDeviation="1.3" result="b"></feGaussianBlur>
                 <feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
               </filter>
             </defs>
             <g filter="url(#bxArrowGlow)" fill="none" stroke-linecap="round" stroke-linejoin="round"></g>
           </svg>
-          <div style="position:relative; z-index:1; display:grid; gap:14px;">
+          <div data-who-block="1" style="position:relative; z-index:1; display:grid; gap:14px;">
             <div data-reveal data-who-card="age" style="padding:20px 22px; border-radius:18px; border:1px solid var(--bx-border,rgba(11,132,216,.24)); background:linear-gradient(150deg,rgba(6,20,38,.88),rgba(3,7,13,.92));">
               <div style="display:flex; align-items:center; gap:9px; font-size:.78rem; font-weight:800; color:var(--bx-glow,#0B84D8);"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#0B84D8; box-shadow:0 0 10px #0B84D8;"></span>גיל</div>
               <p style="margin:9px 0 0; font-size:1.02rem; line-height:1.6;">גברים בני 35 ומעלה שרוצים להשתנות בלי לשבור את השגרה.</p>
@@ -340,7 +349,7 @@ button{font:inherit}
             <div aria-hidden="true" data-who-ring="1" style="position:absolute; width:min(250px,74%); aspect-ratio:1; border-radius:50%; border:1px dashed rgba(11,132,216,.22); animation:bxSpin 60s linear infinite; animation-play-state:var(--bx-play,running);"></div>
             <img src="./assets/biomix-emblem-transparent-1024x1024.png" alt="סמל BioMix, דמות מופשטת עם סליל DNA" width="1024" height="1024" loading="lazy" decoding="async" style="position:relative; width:min(226px,68%); height:auto; filter:drop-shadow(0 0 34px rgba(11,132,216,.4));">
           </div>
-          <div style="position:relative; z-index:1; display:grid; gap:14px;">
+          <div data-who-block="1" style="position:relative; z-index:1; display:grid; gap:14px;">
             <div data-reveal data-reveal-delay="220" data-who-card="time" style="padding:20px 22px; border-radius:18px; border:1px solid var(--bx-border,rgba(11,132,216,.24)); background:linear-gradient(150deg,rgba(6,20,38,.88),rgba(3,7,13,.92));">
               <div style="display:flex; align-items:center; gap:9px; font-size:.78rem; font-weight:800; color:var(--bx-gold,#FFB536);"><span aria-hidden="true" style="width:6px; height:6px; border-radius:50%; background:#FFB536; box-shadow:0 0 10px #FFB536;"></span>זמן</div>
               <p style="margin:9px 0 0; font-size:1.02rem; line-height:1.6;">אנשים עסוקים שאין להם זמן לתכניות מסובכות.</p>
@@ -495,7 +504,7 @@ button{font:inherit}
       </div>
     </div>
     <div style="max-width:1180px; margin:34px auto 0; padding-top:20px; border-top:1px solid rgba(156,177,201,.14); display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; font-size:.88rem; color:rgba(156,177,201,.8);">
-      <span>© BioMix Academy • יאיר שני</span>
+      <span>© 2026 BioMix Academy · יאיר שני · כל הזכויות שמורות</span>
       <span>האתר מספק מידע כללי על אימון ואורח חיים ואינו מהווה ייעוץ רפואי.</span>
     </div>
   </footer>
@@ -726,7 +735,7 @@ class Component extends DCLogic {
   reduced = (typeof window !== 'undefined' && window.matchMedia) ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
 
   state = {
-    sending: false, formOk: false, formErr: '',
+    sending: false, formOk: false, formErr: '', msgLen: 0,
     a11y: this.a11yInit,
     intro: (this.props.enableIntro !== false) && !this.a11yInit.skipIntro,
     menuOpen: false, panelOpen: false, modal: null, speaking: false,
@@ -755,10 +764,41 @@ class Component extends DCLogic {
     window.addEventListener('resize', this.onResize, { passive: true });
     document.addEventListener('keydown', this.onKey);
     document.addEventListener('visibilitychange', this.onVis);
+    document.addEventListener('click', this.onHashClick);
+    this.stripHash();
     this.startAmbient();
     this.setupWhoArrows();
     this.syncNav();
     this.onScroll();
+  }
+
+  /* Single delegated handler for every in-page anchor: scrolls to the section
+     without ever writing a hash into the address bar. Modified clicks and
+     external links fall through to the browser untouched. */
+  onHashClick = (e) => {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const link = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!link || link.target === '_blank') return;
+    const href = link.getAttribute('href');
+    if (!href || href === '#') return;
+    let target = null;
+    try { target = document.querySelector(href); } catch (err) { return; }
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({
+      behavior: this.noMotion() ? 'auto' : 'smooth',
+      block: 'start'
+    });
+    /* keyboard users keep their place in the tab order */
+    if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+    try { target.focus({ preventScroll: true }); } catch (err) {}
+    this.stripHash();
+  };
+
+  /* replaceState only — no new history entry, no reload, no intro restart */
+  stripHash() {
+    if (!location.hash) return;
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
   }
 
   componentWillUnmount() {
@@ -770,6 +810,7 @@ class Component extends DCLogic {
     window.removeEventListener('resize', this.onResize);
     document.removeEventListener('keydown', this.onKey);
     document.removeEventListener('visibilitychange', this.onVis);
+    document.removeEventListener('click', this.onHashClick);
     if (this.mq) { if (this.mq.removeEventListener) this.mq.removeEventListener('change', this.onMq); else this.mq.removeListener(this.onMq); }
     if (this.io) this.io.disconnect();
     this.stopAmbient(); this.stopIntroField();
@@ -1583,6 +1624,26 @@ class Component extends DCLogic {
     const g = svg.querySelector('g'); if (!g) return;
     const hub = grid.querySelector('[data-who-hub]'); if (!hub) return;
 
+    /* Phones only. Above 768 nothing here runs and the desktop geometry below
+       is reached unchanged. */
+    const mobile = (window.innerWidth || 0) <= 768;
+    if (!this._whoOrig) {
+      this._whoOrig = {
+        cols: grid.style.gridTemplateColumns,
+        rowGap: grid.style.rowGap,
+        pair: (grid.querySelector('[data-who-block]') || { style: {} }).style.gridTemplateColumns || ''
+      };
+    }
+    const O = this._whoOrig;
+    const OUTER = mobile ? '1fr' : O.cols;
+    const PAIR = mobile ? '1fr 1fr' : O.pair;
+    const ROWGAP = mobile ? '58px' : O.rowGap;
+    if (grid.style.gridTemplateColumns !== OUTER) grid.style.gridTemplateColumns = OUTER;
+    if (grid.style.rowGap !== ROWGAP) grid.style.rowGap = ROWGAP;
+    grid.querySelectorAll('[data-who-block]').forEach((b) => {
+      if (b.style.gridTemplateColumns !== PAIR) b.style.gridTemplateColumns = PAIR;
+    });
+
     const gb = grid.getBoundingClientRect();
     if (gb.width < 2 || gb.height < 2) return;
     svg.setAttribute('viewBox', '0 0 ' + Math.round(gb.width) + ' ' + Math.round(gb.height));
@@ -1590,8 +1651,7 @@ class Component extends DCLogic {
     const hb = hub.getBoundingClientRect();
     const cx = hb.left - gb.left + hb.width / 2;
     const cy = hb.top - gb.top + hb.height / 2;
-    /* start at the emblem itself, not at the faint halo ring around it —
-       measuring the halo left a large dead gap and the arrows read as loose stubs */
+    /* start at the emblem itself, not at the faint halo ring around it */
     const fig = hub.querySelector('img');
     const ring = hub.querySelector('[data-who-ring]');
     const fb = fig ? fig.getBoundingClientRect() : null;
@@ -1599,39 +1659,69 @@ class Component extends DCLogic {
     const R = fb && fb.width > 8 ? Math.max(fb.width, fb.height) * 0.5
       : rb && rb.width > 8 ? Math.max(rb.width, rb.height) * 0.5
       : Math.min(hb.width, hb.height) * 0.5 * 0.86;
-    const narrow = gb.width < 760;
 
     const parts = [];
-    this.WHO_ARROWS.forEach((a, i) => {
+
+    /* On a phone the cards sit in two side-by-side pairs, one above the figure
+       and one below. A single short stem leaves the ring and forks to the two
+       cards of its pair, entirely inside the vertical gap. */
+    if (mobile) {
+      [{ keys: ['age', 'start'], dir: -1 }, { keys: ['time', 'exp'], dir: 1 }].forEach((pair) => {
+        const boxes = pair.keys.map((k) => {
+          const el = grid.querySelector('[data-who-card="' + k + '"]');
+          if (!el) return null;
+          const b = el.getBoundingClientRect();
+          return { k: k, cx: b.left - gb.left + b.width / 2, edge: (pair.dir < 0 ? b.bottom : b.top) - gb.top };
+        }).filter(Boolean);
+        if (!boxes.length) return;
+        const d0 = pair.dir;
+        const stemFrom = cy + d0 * (R + 10);
+        const edge = d0 < 0 ? Math.max.apply(null, boxes.map((o) => o.edge))
+                            : Math.min.apply(null, boxes.map((o) => o.edge));
+        const END_GAP = 9;
+        const target = edge - d0 * END_GAP;
+        const span = (target - stemFrom) * d0;
+        if (span < 26) return;
+        const fork = stemFrom + d0 * span * 0.42;
+        boxes.forEach((o) => {
+          const color = (this.WHO_ARROWS.find((w) => w.key === o.k) || {}).color || '#38C6F4';
+          const d = 'M' + cx.toFixed(1) + ' ' + stemFrom.toFixed(1) +
+                    ' L' + cx.toFixed(1) + ' ' + fork.toFixed(1) +
+                    ' C' + cx.toFixed(1) + ' ' + (fork + d0 * 14).toFixed(1) +
+                    ' ' + o.cx.toFixed(1) + ' ' + (target - d0 * 20).toFixed(1) +
+                    ' ' + o.cx.toFixed(1) + ' ' + target.toFixed(1);
+          const HL = 8, HW = 4.2;
+          const head = 'M' + (o.cx - HW).toFixed(1) + ' ' + (target - d0 * HL).toFixed(1) +
+                       ' L' + o.cx.toFixed(1) + ' ' + target.toFixed(1) +
+                       ' L' + (o.cx + HW).toFixed(1) + ' ' + (target - d0 * HL).toFixed(1);
+          parts.push({ d: d, head: head, color: color, key: o.k });
+        });
+      });
+    }
+
+    if (!mobile) this.WHO_ARROWS.forEach((a, i) => {
       const card = grid.querySelector('[data-who-card="' + a.key + '"]');
       if (!card) return;
       const cb = card.getBoundingClientRect();
       const bx = cb.left - gb.left, by = cb.top - gb.top, bw = cb.width, bh = cb.height;
       const ccx = bx + bw / 2, ccy = by + bh / 2;
+      const START_GAP = 12, END_GAP = 10;
 
-      /* aim at the card edge that faces the hub */
-      let tx, ty;
-      if (narrow) { tx = ccx; ty = (ccy > cy) ? by : by + bh; }
-      else { tx = (ccx > cx) ? bx : bx + bw; ty = ccy; }
-
+      const tx = (ccx > cx) ? bx : bx + bw, ty = ccy;
       let dx = tx - cx, dy = ty - cy;
       const len = Math.hypot(dx, dy) || 1;
       dx /= len; dy /= len;
-
-      const START_GAP = 12, END_GAP = 10;
       const sx = cx + dx * (R + START_GAP), sy = cy + dy * (R + START_GAP);
       const ex = tx - dx * END_GAP, ey = ty - dy * END_GAP;
       const run = Math.hypot(ex - sx, ey - sy);
-      if (run < 24) return;                        /* too cramped to read — skip */
-
-      /* one gentle bow, alternating side so the pairs mirror each other */
+      if (run < 24) return;
       const bow = Math.min(run * 0.18, 34) * (i % 2 ? -1 : 1);
       const mx = (sx + ex) / 2 - dy * bow, my = (sy + ey) / 2 + dx * bow;
       const d = 'M' + sx.toFixed(1) + ' ' + sy.toFixed(1) + ' Q' + mx.toFixed(1) + ' ' + my.toFixed(1) + ' ' + ex.toFixed(1) + ' ' + ey.toFixed(1);
-
-      /* arrowhead aligned to the incoming tangent (from the control point) */
       const hx = ex - mx, hy = ey - my, hl = Math.hypot(hx, hy) || 1;
-      const ux = hx / hl, uy = hy / hl, px = -uy, py = ux;
+      const ux = hx / hl, uy = hy / hl;
+
+      const px = -uy, py = ux;
       const HL = 9, HW = 5;
       const head = 'M' + (ex - ux * HL + px * HW).toFixed(1) + ' ' + (ey - uy * HL + py * HW).toFixed(1) +
                    ' L' + ex.toFixed(1) + ' ' + ey.toFixed(1) +
@@ -1664,6 +1754,8 @@ class Component extends DCLogic {
       const n = this._whoPaths[i]; if (!n) return;
       n.line.setAttribute('d', p.d);
       n.line.setAttribute('stroke', p.color);
+      n.line.setAttribute('stroke-width', '1.6');
+      n.head.setAttribute('stroke-width', '1.7');
       n.head.setAttribute('d', p.head);
       n.head.setAttribute('stroke', p.color);
       n.dot.setAttribute('fill', p.color);
@@ -1749,6 +1841,11 @@ class Component extends DCLogic {
     return null;
   }
 
+  onMsgInput = (e) => {
+    const n = (e && e.target ? e.target.value : '').length;
+    if (n !== this.state.msgLen) this.setState({ msgLen: n });
+  };
+
   onSubmit = (e) => {
     e.preventDefault();
     if (this.state.sending) return;                 /* no double submits */
@@ -1775,7 +1872,7 @@ class Component extends DCLogic {
         if (!r.ok) throw new Error((r.body && r.body.error) || 'send failed');
         /* only now is it safe to wipe what the user typed */
         form.reset();
-        this.setState({ sending: false, formOk: true, formErr: '' });
+        this.setState({ sending: false, formOk: true, formErr: '', msgLen: 0 });
       })
       .catch(() => {
         this.setState({
@@ -1797,6 +1894,9 @@ class Component extends DCLogic {
       whoGridRef: this.whoGridRef, whoSvgRef: this.whoSvgRef,
       formRef: this.formRef, submitRef: this.submitRef, onSubmit: this.onSubmit,
       submitLabel: this.state.sending ? 'שולח...' : 'שליחת השאלון',
+      msgCount: (this.state.msgLen || 0) + '/300',
+      msgCountColor: (this.state.msgLen || 0) >= 270 ? '#FFB536' : 'rgba(156,177,201,.75)',
+      onMsgInput: this.onMsgInput,
       formOk: this.state.formOk, formErr: this.state.formErr,
       dnaCanvasRef: this.dnaCanvasRef, dnaGlowRef: this.dnaGlowRef,
       bgFrozen: this.noMotion() ? '' : null,
