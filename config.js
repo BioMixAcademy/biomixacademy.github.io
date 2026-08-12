@@ -20,7 +20,8 @@
       description:
         'BioMix Academy – יאיר שני, מדריך כושר גופני ובריאות. אימונים קצרים וממוקדים, הנחיות תזונה פשוטות וליווי אישי לשינוי הרכב הגוף. אונליין ופרונטלי.',
       themeColor: '#03070D',
-      canonical: 'https://biomixacademy.github.io/',
+      /* ⚠ יש לעדכן לכתובת ה־GitHub Pages הסופית לפני פרסום (כולל / בסוף). */
+      canonical: 'https://yairshani76.github.io/biomix-academy/',
       accessibilityUpdated: '12 באוגוסט 2026',
       phone: '054-875-1484',
       phoneHref: 'tel:+972548751484',

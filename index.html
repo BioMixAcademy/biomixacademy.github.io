@@ -145,7 +145,7 @@ button{font:inherit}
           </h1>
           <p data-hero data-hero-delay="440" style="margin:22px 0 0; max-width:54ch; font-size:clamp(1.03rem,2.2vw,1.24rem); line-height:var(--bx-lh,1.75); color:var(--bx-muted,#9CB1C9); text-wrap:pretty;">שיטת BioMix נבנתה לגברים עסוקים שרוצים תהליך ברור, אימונים ממוקדים וליווי אישי בגובה העיניים.</p>
           <div data-hero data-hero-delay="540" style="display:flex; flex-wrap:wrap; gap:12px; margin-top:32px;">
-            <a href="{{ lnkQuiz }}" target="_blank" rel="noopener noreferrer" style="position:relative; display:inline-flex; align-items:center; justify-content:center; min-height:56px; padding:16px 32px; border-radius:999px; background:linear-gradient(110deg,#F47A18 0%,#FFB536 44%,#FFF6E4 50%,#FFB536 56%,#F47A18 100%); background-size:280% 100%; background-position:100% 0; color:#0A0500; font-weight:800; font-size:1.08rem; box-shadow:0 0 0 1px rgba(255,181,54,.5), 0 14px 40px rgba(244,122,24,.34), 0 0 60px rgba(244,122,24,.18); transition:background-position 1s cubic-bezier(.2,.8,.2,1), transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;" style-hover="background-position:0 0; transform:translateY(-3px); box-shadow:0 0 0 1px rgba(255,181,54,.8), 0 22px 54px rgba(244,122,24,.5), 0 0 90px rgba(244,122,24,.32); color:#0A0500" style-active="transform:translateY(-1px) scale(.985)">בדקו אם השיטה מתאימה לכם<span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">נפתח בלשונית חדשה באתר חיצוני</span></a>
+            <a href="#quiz" style="position:relative; display:inline-flex; align-items:center; justify-content:center; min-height:56px; padding:16px 32px; border-radius:999px; background:linear-gradient(110deg,#F47A18 0%,#FFB536 44%,#FFF6E4 50%,#FFB536 56%,#F47A18 100%); background-size:280% 100%; background-position:100% 0; color:#0A0500; font-weight:800; font-size:1.08rem; box-shadow:0 0 0 1px rgba(255,181,54,.5), 0 14px 40px rgba(244,122,24,.34), 0 0 60px rgba(244,122,24,.18); transition:background-position 1s cubic-bezier(.2,.8,.2,1), transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;" style-hover="background-position:0 0; transform:translateY(-3px); box-shadow:0 0 0 1px rgba(255,181,54,.8), 0 22px 54px rgba(244,122,24,.5), 0 0 90px rgba(244,122,24,.32); color:#0A0500" style-active="transform:translateY(-1px) scale(.985)">בדקו אם השיטה מתאימה לכם</a>
             <a href="{{ lnkWa }}" target="_blank" rel="noopener noreferrer" style="position:relative; display:inline-flex; align-items:center; justify-content:center; gap:11px; min-height:56px; padding:16px 28px; border-radius:999px; border:1px solid rgba(11,132,216,.5); background:rgba(6,20,38,.55); color:var(--bx-text,#F4F7FB); font-weight:700; font-size:1.03rem; backdrop-filter:blur(8px); transition:border-color .4s ease, background .4s ease, transform .45s cubic-bezier(.2,.8,.2,1);" style-hover="border-color:#25D366; background:rgba(37,211,102,.14); transform:translateY(-3px); color:#F4F7FB" style-active="transform:translateY(-1px) scale(.985)">
               <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4a9.6 9.6 0 0 0-8.28 14.4L2.4 21.6l4.92-1.29A9.6 9.6 0 1 0 12 2.4Z" fill="#25D366"></path><path d="M9.29 7.35c-.19-.44-.39-.45-.58-.46h-.49c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.14 0 1.26.92 2.48 1.05 2.65.13.17 1.79 2.85 4.42 3.88 2.19.85 2.63.68 3.1.64.47-.04 1.52-.62 1.74-1.22.21-.6.21-1.11.15-1.22-.06-.11-.24-.17-.49-.3-.26-.13-1.52-.75-1.76-.84-.24-.08-.41-.13-.58.13-.17.26-.66.84-.81 1.01-.15.17-.3.19-.55.06-.26-.13-1.08-.4-2.06-1.27-.76-.68-1.28-1.52-1.43-1.78-.15-.26-.02-.4.11-.52.12-.12.26-.3.38-.46.13-.15.17-.26.26-.44.09-.17.04-.32-.02-.45-.06-.13-.56-1.4-.79-1.9Z" fill="#03070D"></path></svg>
               מדברים עם יאיר בוואטסאפ<span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">נפתח בלשונית חדשה באתר חיצוני</span>
@@ -229,7 +229,7 @@ button{font:inherit}
           <p data-reveal data-reveal-delay="140" style="margin:0; font-size:1.03rem; line-height:var(--bx-lh,1.75); color:var(--bx-muted,#9CB1C9);">שאלון קצר שממנו מבינים את נקודת הפתיחה ואת המטרה. אין התחייבות.</p>
         </div>
 
-        <form ref="{{ formRef }}" onSubmit="{{ onSubmit }}" noValidate data-reveal data-reveal-delay="180" style="position:relative; padding:clamp(20px,3.2vw,34px); border-radius:26px; border:1px solid var(--bx-border,rgba(11,132,216,.24)); background:linear-gradient(160deg, rgba(6,20,38,.92), rgba(3,7,13,.95)); box-shadow:0 18px 52px rgba(0,0,0,.45);">
+        <form id="quiz" ref="{{ formRef }}" onSubmit="{{ onSubmit }}" noValidate data-reveal data-reveal-delay="180" style="position:relative; scroll-margin-top:250px; padding:clamp(20px,3.2vw,34px); border-radius:26px; border:1px solid var(--bx-border,rgba(11,132,216,.24)); background:linear-gradient(160deg, rgba(6,20,38,.92), rgba(3,7,13,.95)); box-shadow:0 18px 52px rgba(0,0,0,.45);">
           <div aria-hidden="true" style="position:absolute; top:0; right:26px; left:26px; height:1px; background:linear-gradient(90deg,transparent,rgba(11,132,216,.6),rgba(255,181,54,.6),transparent);"></div>
 
           <div style="display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));">
@@ -412,7 +412,7 @@ button{font:inherit}
         <h2 id="bx-quote" data-reveal style="margin:0; font-size:clamp(1.6rem,4.6vw,3rem); font-weight:900; line-height:1.26; text-wrap:balance;">״לא צריך מוטיבציה.<br>צריך תכנית שמתאימה לחיים שלך.״</h2>
         <p data-reveal data-reveal-delay="130" style="margin:22px auto 0; max-width:52ch; font-size:1.05rem; line-height:var(--bx-lh,1.75); color:var(--bx-muted,#9CB1C9);">השאלון הקצר הוא נקודת ההתחלה. ממנו מבינים אם התהליך מתאים לך, ומה השלב הראשון.</p>
         <div data-reveal data-reveal-delay="210" style="margin-top:34px;">
-          <a href="{{ lnkQuiz }}" target="_blank" rel="noopener noreferrer" style="position:relative; display:inline-flex; align-items:center; justify-content:center; min-height:56px; padding:16px 34px; border-radius:999px; background:linear-gradient(110deg,#F47A18 0%,#FFB536 44%,#FFF6E4 50%,#FFB536 56%,#F47A18 100%); background-size:280% 100%; background-position:100% 0; color:#0A0500; font-weight:800; font-size:1.06rem; box-shadow:0 0 0 1px rgba(255,181,54,.5), 0 14px 40px rgba(244,122,24,.32); transition:background-position 1s cubic-bezier(.2,.8,.2,1), transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;" style-hover="background-position:0 0; transform:translateY(-3px); box-shadow:0 0 0 1px rgba(255,181,54,.8), 0 22px 54px rgba(244,122,24,.48); color:#0A0500" style-active="transform:translateY(-1px) scale(.985)">בדקו אם השיטה מתאימה לכם<span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">נפתח בלשונית חדשה באתר חיצוני</span></a>
+          <a href="{{ lnkQuiz }}" target="_blank" rel="noopener noreferrer" style="position:relative; display:inline-flex; align-items:center; justify-content:center; min-height:56px; padding:16px 34px; border-radius:999px; background:linear-gradient(110deg,#F47A18 0%,#FFB536 44%,#FFF6E4 50%,#FFB536 56%,#F47A18 100%); background-size:280% 100%; background-position:100% 0; color:#0A0500; font-weight:800; font-size:1.06rem; box-shadow:0 0 0 1px rgba(255,181,54,.5), 0 14px 40px rgba(244,122,24,.32); transition:background-position 1s cubic-bezier(.2,.8,.2,1), transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;" style-hover="background-position:0 0; transform:translateY(-3px); box-shadow:0 0 0 1px rgba(255,181,54,.8), 0 22px 54px rgba(244,122,24,.48); color:#0A0500" style-active="transform:translateY(-1px) scale(.985)">בדקו אם השיטה מתאימה לכם</a>
         </div>
       </div>
     </section>
@@ -672,7 +672,6 @@ button{font:inherit}
    No mail address appears anywhere in the code or on the page. */
 const FORM_ENDPOINT = 'https://formspree.io/f/mljrnlbz';
 const A11Y_KEY = 'biomix-a11y-v1';
-const INTRO_KEY = 'biomix-intro-seen';
 const DEFAULT_A11Y = { font: 100, contrast: false, links: false, spacing: false, noAnim: false, noFx: false, skipIntro: false };
 const EASE = 'cubic-bezier(.22,.78,.24,1)';
 const WA_NUMBER = '972548751484';
@@ -729,8 +728,7 @@ class Component extends DCLogic {
   state = {
     sending: false, formOk: false, formErr: '',
     a11y: this.a11yInit,
-    intro: (this.props.enableIntro !== false) && !this.reduced && !this.a11yInit.skipIntro &&
-      !(typeof sessionStorage !== 'undefined' && sessionStorage.getItem(INTRO_KEY)),
+    intro: (this.props.enableIntro !== false) && !this.a11yInit.skipIntro,
     menuOpen: false, panelOpen: false, modal: null, speaking: false,
     isMobile: (typeof window !== 'undefined') ? window.innerWidth < 1024 : false
   };
@@ -740,11 +738,15 @@ class Component extends DCLogic {
     try { document.documentElement.lang = 'he'; document.documentElement.setAttribute('dir', 'rtl'); } catch (e) {}
     this.applyA11y(this.state.a11y);
     this.applyHeroLayout();
+    /* one-time cleanup: earlier builds parked an "intro already seen" flag here.
+       Nothing reads it any more — clear it so returning visitors carry no residue. */
+    try { sessionStorage.removeItem('biomix-intro-seen'); } catch (e) {}
     this.prepHero();
     this.setupReveal();
     if (this.state.intro) {
-      try { sessionStorage.setItem(INTRO_KEY, '1'); } catch (e) {}
-      requestAnimationFrame(() => this.runIntro());
+      /* lock the page before the first painted frame so nothing scrolls under the overlay */
+      document.body.style.overflow = 'hidden';
+      this.bootIntro();
     } else { this.playHero(60); }
     this.mq = window.matchMedia('(max-width: 1023px)');
     this.onMq = () => this.setState({ isMobile: this.mq.matches }, () => this.applyHeroLayout());
@@ -801,13 +803,27 @@ class Component extends DCLogic {
   startIntroReplay = () => {
     try { window.scrollTo(0, 0); } catch (e) {}
     this.prepHero();
-    /* bypasses the sessionStorage "already seen" mark for this run only; the key itself is left intact */
-    this.setState({ intro: true, menuOpen: false, panelOpen: false, modal: null }, () => {
-      requestAnimationFrame(() => this.runIntro());
-    });
+    this.setState({ intro: true, menuOpen: false, panelOpen: false, modal: null }, () => this.bootIntro());
   };
 
   timer(fn, ms) { this.timers = this.timers || []; this.timers.push(setTimeout(fn, ms)); }
+  /* reduced motion still sees the intro, just a shorter, gentler cut of it */
+  cue(ms) { return this.reduced ? Math.round(ms * 0.42) : ms; }
+  /* requestAnimationFrame is throttled to nothing in a backgrounded tab, which would
+     leave the overlay up and the page locked forever. The timeout is the guarantee;
+     whichever fires first wins, and the other is a no-op. */
+  bootIntro() {
+    if (this.introBooting) return;
+    this.introBooting = true;
+    const go = () => {
+      if (!this.introBooting) return;
+      this.introBooting = false;
+      clearTimeout(this.introBoot);
+      this.runIntro();
+    };
+    requestAnimationFrame(go);
+    this.introBoot = setTimeout(go, 220);
+  }
   noMotion() { const a = this.state.a11y; return this.reduced || a.noAnim || a.noFx; }
 
   applyHeroLayout() {
@@ -1392,24 +1408,30 @@ class Component extends DCLogic {
     this.timer(() => {
       const em = this.introEmblemRef.current;
       if (em) { em.style.opacity = '1'; em.style.transform = 'scale(1)'; em.style.filter = 'drop-shadow(0 0 34px rgba(11,132,216,.8))'; }
-    }, 2800);
-    this.timer(() => { const el = this.introT1Ref.current; if (el) { el.style.opacity = '1'; el.style.transform = 'none'; } }, 3150);
-    this.timer(() => { const el = this.introT2Ref.current; if (el) { el.style.opacity = '1'; el.style.transform = 'none'; } }, 3380);
-    this.timer(() => this.beginIntroExit(), 3800);
-    this.timer(() => this.finishIntro(), 4550);
+    }, this.cue(2800));
+    this.timer(() => { const el = this.introT1Ref.current; if (el) { el.style.opacity = '1'; el.style.transform = 'none'; } }, this.cue(3150));
+    this.timer(() => { const el = this.introT2Ref.current; if (el) { el.style.opacity = '1'; el.style.transform = 'none'; } }, this.cue(3380));
+    this.timer(() => this.beginIntroExit(), this.cue(3800));
+    this.timer(() => this.finishIntro(), this.cue(4550));
     /* hard stop: the intro always clears, whatever fails above */
-    this.introFailsafe = setTimeout(() => this.finishIntro(), 5200);
+    this.introFailsafe = setTimeout(() => this.finishIntro(), this.cue(5200) + 400);
   }
   beginIntroExit() {
     if (this.exiting) return;
     this.exiting = true;
     const el = this.introRef.current;
-    if (el) { el.style.opacity = '0'; el.style.transform = 'scale(1.35)'; el.style.filter = 'blur(6px)'; el.style.pointerEvents = 'none'; }
+    if (el) {
+      el.style.opacity = '0';
+      el.style.pointerEvents = 'none';
+      if (!this.reduced) { el.style.transform = 'scale(1.35)'; el.style.filter = 'blur(6px)'; }
+    }
     const em = this.introEmblemRef.current;
     if (em) { em.style.transform = 'scale(1.3)'; em.style.opacity = '0'; }
     this.playHero(160);
   }
   finishIntro() {
+    this.introBooting = false;
+    if (this.introBoot) { clearTimeout(this.introBoot); this.introBoot = 0; }
     if (this.introFailsafe) { clearTimeout(this.introFailsafe); this.introFailsafe = 0; }
     this.exiting = false;
     this.stopIntroField();
