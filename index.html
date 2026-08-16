@@ -201,7 +201,7 @@ button{font:inherit}
 
 
           <sc-if value="{{ showPayment }}" hint-placeholder-val="{{ true }}">
-            <a href="{{ lnkPay }}" target="_blank" rel="noopener noreferrer" data-reveal data-reveal-delay="180" data-sheen style="position:relative; overflow:hidden; display:flex; align-items:center; gap:18px; min-height:126px; padding:28px 28px; border-radius:24px; border:1px solid rgba(255,181,54,.32); background:linear-gradient(158deg, rgba(255,181,54,.11) 0%, rgba(9,17,28,.94) 46%, rgba(3,7,13,.96) 100%); color:var(--bx-text,#F4F7FB); box-shadow:0 0 0 1px rgba(255,181,54,.06) inset; transition:transform .5s cubic-bezier(.2,.8,.2,1), border-color .4s ease, box-shadow .5s ease;" style-hover="transform:translateY(-3px); border-color:#FFB536; box-shadow:0 24px 54px rgba(0,0,0,.48), 0 0 54px rgba(255,181,54,.18); color:#F4F7FB" style-active="transform:translateY(-1px) scale(.996)">
+            <button type="button" onClick="{{ openPay }}" data-reveal data-reveal-delay="180" data-sheen style="position:relative; overflow:hidden; display:flex; align-items:center; gap:18px; width:100%; font-family:inherit; text-align:start; cursor:pointer; min-height:126px; padding:28px 28px; border-radius:24px; border:1px solid rgba(255,181,54,.32); background:linear-gradient(158deg, rgba(255,181,54,.11) 0%, rgba(9,17,28,.94) 46%, rgba(3,7,13,.96) 100%); color:var(--bx-text,#F4F7FB); box-shadow:0 0 0 1px rgba(255,181,54,.06) inset; transition:transform .5s cubic-bezier(.2,.8,.2,1), border-color .4s ease, box-shadow .5s ease;" style-hover="transform:translateY(-3px); border-color:#FFB536; box-shadow:0 24px 54px rgba(0,0,0,.48), 0 0 54px rgba(255,181,54,.18); color:#F4F7FB" style-active="transform:translateY(-1px) scale(.996)">
               <span aria-hidden="true" style="flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; width:56px; height:56px; border-radius:18px; border:1px solid rgba(156,177,201,.3); background:linear-gradient(150deg, rgba(156,177,201,.14), rgba(156,177,201,.04));">
                 <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#C8D7E8" stroke-width="1.9" stroke-linecap="round"><rect x="3" y="6" width="18" height="12" rx="3"></rect><line x1="3" y1="10.5" x2="21" y2="10.5"></line><line x1="6.5" y1="14.5" x2="10" y2="14.5"></line></svg>
               </span>
@@ -209,19 +209,19 @@ button{font:inherit}
                 <span style="display:block; font-size:1.16rem; font-weight:900;">מעבר לתשלום מאובטח</span>
                 <span style="display:block; margin-top:6px; font-size:.96rem; line-height:1.6; color:var(--bx-muted,#9CB1C9);">להשלמת ההצטרפות באמצעות עמוד התשלום המאובטח</span>
               </span>
-              <span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">נפתח בלשונית חדשה באתר חיצוני</span>
-            </a>
+              <span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">נפתח בחלון תשלום מאובטח בתוך האתר</span>
+            </button>
           </sc-if>
 
         </div>
 
         <div data-reveal data-reveal-delay="340" style="display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:20px;">
           <span style="font-size:.95rem; font-weight:700; color:var(--bx-muted,#9CB1C9);">עקבו אחרי BioMix</span>
-          <a href="{{ lnkIg }}" target="_blank" rel="noopener noreferrer" aria-label="אימונים, טיפים והשראה באינסטגרם, נפתח בלשונית חדשה באתר חיצוני" style="display:inline-flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:17px; border:1px solid var(--bx-border,rgba(11,132,216,.24)); background:rgba(6,20,38,.75); transition:border-color .4s ease, transform .45s cubic-bezier(.2,.8,.2,1), background .4s ease;" style-hover="border-color:#FFB536; background:rgba(244,122,24,.16); transform:translateY(-4px)">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F4F7FB" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.2"></rect><circle cx="12" cy="12" r="4.3"></circle><circle cx="17.4" cy="6.6" r="1.2" fill="#FFB536" stroke="none"></circle></svg>
+          <a href="{{ lnkIg }}" target="_blank" rel="noopener noreferrer" aria-label="אימונים, טיפים והשראה באינסטגרם, נפתח בלשונית חדשה באתר חיצוני" style="display:inline-flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:17px; border:1px solid var(--bx-border,rgba(11,132,216,.24)); background:rgba(6,20,38,.75); transition:border-color .4s ease, transform .45s cubic-bezier(.2,.8,.2,1), background .4s ease;" style-hover="border-color:#FD1D1D; background:rgba(131,58,180,.22); transform:translateY(-4px)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#bxIgGrad)" stroke-width="1.8" aria-hidden="true"><defs><linearGradient id="bxIgGrad" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FCAF45"></stop><stop offset=".5" stop-color="#FD1D1D"></stop><stop offset="1" stop-color="#833AB4"></stop></linearGradient></defs><rect x="3" y="3" width="18" height="18" rx="5.2"></rect><circle cx="12" cy="12" r="4.3"></circle><circle cx="17.4" cy="6.6" r="1.2" fill="#FCAF45" stroke="none"></circle></svg>
           </a>
-          <a href="{{ lnkFb }}" target="_blank" rel="noopener noreferrer" aria-label="עדכונים וקהילת BioMix בפייסבוק, נפתח בלשונית חדשה באתר חיצוני" style="display:inline-flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:17px; border:1px solid var(--bx-border,rgba(11,132,216,.24)); background:rgba(6,20,38,.75); transition:border-color .4s ease, transform .45s cubic-bezier(.2,.8,.2,1), background .4s ease;" style-hover="border-color:#7FD0FF; background:rgba(11,132,216,.2); transform:translateY(-4px)">
-            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.7 21v-7.9h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H17V3.72A21 21 0 0 0 14.6 3.6c-2.4 0-4 1.45-4 4.12V10H8v3.1h2.6V21Z" fill="#F4F7FB"></path></svg>
+          <a href="{{ lnkFb }}" target="_blank" rel="noopener noreferrer" aria-label="עדכונים וקהילת BioMix בפייסבוק, נפתח בלשונית חדשה באתר חיצוני" style="display:inline-flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:17px; border:1px solid var(--bx-border,rgba(11,132,216,.24)); background:rgba(6,20,38,.75); transition:border-color .4s ease, transform .45s cubic-bezier(.2,.8,.2,1), background .4s ease;" style-hover="border-color:#1877F2; background:rgba(24,119,242,.22); transform:translateY(-4px)">
+            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.7 21v-7.9h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H17V3.72A21 21 0 0 0 14.6 3.6c-2.4 0-4 1.45-4 4.12V10H8v3.1h2.6V21Z" fill="#1877F2"></path></svg>
           </a>
         </div>
       </div>
@@ -398,21 +398,21 @@ button{font:inherit}
             </div>
             <div style="display:flex; flex-direction:column; gap:7px;">
               <label for="bx-goal" style="font-size:.94rem; font-weight:700;">המטרה המרכזית</label>
-              <select id="bx-goal" name="מטרה" style="min-height:50px; padding:12px 15px 12px 44px; border-radius:14px; border:1px solid var(--bx-border,rgba(11,132,216,.24)); background-color:rgba(3,7,13,.7); background-image:url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 12 8&quot;><path d=&quot;M1 1.5 6 6.5 11 1.5&quot; fill=&quot;none&quot; stroke=&quot;%239CB1C9&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/></svg>'); background-repeat:no-repeat; background-position:left 16px center; background-size:12px 8px; appearance:none; -webkit-appearance:none; color:var(--bx-text,#F4F7FB); font-family:inherit; font-size:1rem; cursor:pointer; transition:border-color .3s ease;" style-focus="border-color:#FFB536">
-                <option value="ירידה באחוזי שומן">ירידה באחוזי שומן</option>
-                <option value="בניית מסת שריר">בניית מסת שריר</option>
-                <option value="שינוי הרכב הגוף">שינוי הרכב הגוף</option>
-                <option value="חזרה לכושר אחרי הפסקה">חזרה לכושר אחרי הפסקה</option>
-                <option value="בריאות ואנרגיה יומיומית">בריאות ואנרגיה יומיומית</option>
+              <select id="bx-goal" name="מטרה" style="color-scheme:dark; min-height:50px; padding:12px 15px 12px 44px; border-radius:14px; border:1px solid var(--bx-border,rgba(11,132,216,.24)); background-color:rgba(3,7,13,.7); background-image:url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 12 8&quot;><path d=&quot;M1 1.5 6 6.5 11 1.5&quot; fill=&quot;none&quot; stroke=&quot;%239CB1C9&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/></svg>'); background-repeat:no-repeat; background-position:left 16px center; background-size:12px 8px; appearance:none; -webkit-appearance:none; color:var(--bx-text,#F4F7FB); font-family:inherit; font-size:1rem; cursor:pointer; transition:border-color .3s ease;" style-focus="border-color:#FFB536">
+                <option value="ירידה באחוזי שומן" style="background-color:#071628; color:#F4F7FB;">ירידה באחוזי שומן</option>
+                <option value="בניית מסת שריר" style="background-color:#071628; color:#F4F7FB;">בניית מסת שריר</option>
+                <option value="שינוי הרכב הגוף" style="background-color:#071628; color:#F4F7FB;">שינוי הרכב הגוף</option>
+                <option value="חזרה לכושר אחרי הפסקה" style="background-color:#071628; color:#F4F7FB;">חזרה לכושר אחרי הפסקה</option>
+                <option value="בריאות ואנרגיה יומיומית" style="background-color:#071628; color:#F4F7FB;">בריאות ואנרגיה יומיומית</option>
               </select>
             </div>
             <div style="display:flex; flex-direction:column; gap:7px;">
               <label for="bx-exp" style="font-size:.94rem; font-weight:700;">ניסיון באימונים</label>
-              <select id="bx-exp" name="ניסיון" style="min-height:50px; padding:12px 15px 12px 44px; border-radius:14px; border:1px solid var(--bx-border,rgba(11,132,216,.24)); background-color:rgba(3,7,13,.7); background-image:url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 12 8&quot;><path d=&quot;M1 1.5 6 6.5 11 1.5&quot; fill=&quot;none&quot; stroke=&quot;%239CB1C9&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/></svg>'); background-repeat:no-repeat; background-position:left 16px center; background-size:12px 8px; appearance:none; -webkit-appearance:none; color:var(--bx-text,#F4F7FB); font-family:inherit; font-size:1rem; cursor:pointer; transition:border-color .3s ease;" style-focus="border-color:#FFB536">
-                <option value="מתחיל לגמרי">מתחיל לגמרי</option>
-                <option value="חוזר אחרי הפסקה ארוכה">חוזר אחרי הפסקה ארוכה</option>
-                <option value="מתאמן באופן לא סדיר">מתאמן באופן לא סדיר</option>
-                <option value="מתאמן בקביעות">מתאמן בקביעות</option>
+              <select id="bx-exp" name="ניסיון" style="color-scheme:dark; min-height:50px; padding:12px 15px 12px 44px; border-radius:14px; border:1px solid var(--bx-border,rgba(11,132,216,.24)); background-color:rgba(3,7,13,.7); background-image:url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 12 8&quot;><path d=&quot;M1 1.5 6 6.5 11 1.5&quot; fill=&quot;none&quot; stroke=&quot;%239CB1C9&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/></svg>'); background-repeat:no-repeat; background-position:left 16px center; background-size:12px 8px; appearance:none; -webkit-appearance:none; color:var(--bx-text,#F4F7FB); font-family:inherit; font-size:1rem; cursor:pointer; transition:border-color .3s ease;" style-focus="border-color:#FFB536">
+                <option value="מתחיל לגמרי" style="background-color:#071628; color:#F4F7FB;">מתחיל לגמרי</option>
+                <option value="חוזר אחרי הפסקה ארוכה" style="background-color:#071628; color:#F4F7FB;">חוזר אחרי הפסקה ארוכה</option>
+                <option value="מתאמן באופן לא סדיר" style="background-color:#071628; color:#F4F7FB;">מתאמן באופן לא סדיר</option>
+                <option value="מתאמן בקביעות" style="background-color:#071628; color:#F4F7FB;">מתאמן בקביעות</option>
               </select>
             </div>
           </div>
@@ -579,6 +579,39 @@ button{font:inherit}
     </div>
   </sc-if>
 
+  <sc-if value="{{ payOpen }}">
+    <div style="position:fixed; inset:0; z-index:4000; display:flex; align-items:center; justify-content:center; padding:clamp(8px,2vw,24px); padding-bottom:calc(clamp(8px,2vw,24px) + env(safe-area-inset-bottom,0px)); padding-top:calc(clamp(8px,2vw,24px) + env(safe-area-inset-top,0px)); background:rgba(2,5,10,.8); backdrop-filter:blur(9px);">
+      <div ref="{{ payRef }}" role="dialog" aria-modal="true" aria-labelledby="bx-pay-title" style="display:flex; flex-direction:column; width:min(880px,100%); height:min(92dvh,940px); overflow:hidden; border-radius:22px; border:1px solid rgba(255,181,54,.3); background:linear-gradient(180deg,#071628,#03070D); box-shadow:0 30px 80px rgba(0,0,0,.78);">
+        <div style="flex:0 0 auto; display:flex; align-items:center; gap:12px; padding:16px clamp(14px,2.5vw,22px); border-bottom:1px solid var(--bx-border,rgba(11,132,216,.24));">
+          <span aria-hidden="true" style="flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:13px; border:1px solid rgba(255,181,54,.34); background:rgba(255,181,54,.1);">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#FFB536" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.4"></rect><path d="M8 10.5V7.6a4 4 0 0 1 8 0v2.9"></path></svg>
+          </span>
+          <span style="min-width:0; flex:1 1 auto;">
+            <span id="bx-pay-title" style="display:block; font-size:clamp(1.06rem,2.4vw,1.24rem); font-weight:900; color:var(--bx-text,#F4F7FB);">תשלום מאובטח</span>
+            <span style="display:block; margin-top:3px; font-size:.9rem; line-height:1.5; color:var(--bx-muted,#9CB1C9);">התשלום מתבצע באופן מאובטח באמצעות Cardcom</span>
+          </span>
+          <button type="button" ref="{{ payCloseRef }}" onClick="{{ closePay }}" aria-label="סגירת חלון התשלום" style="flex:0 0 auto; width:44px; height:44px; display:inline-flex; align-items:center; justify-content:center; border-radius:13px; border:1px solid var(--bx-border,rgba(11,132,216,.24)); background:rgba(6,20,38,.7); color:var(--bx-text,#F4F7FB); font-size:1.1rem; cursor:pointer; transition:border-color .25s ease, background .25s ease;" style-hover="border-color:#FFB536; background:rgba(11,132,216,.24)">✕</button>
+        </div>
+        <div style="position:relative; flex:1 1 auto; min-height:0; background:#FFFFFF;">
+          <sc-if value="{{ payLoading }}">
+            <div aria-live="polite" style="position:absolute; inset:0; z-index:2; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; background:linear-gradient(180deg,#071628,#03070D);">
+              <span aria-hidden="true" style="width:34px; height:34px; border-radius:50%; border:2px solid rgba(11,132,216,.3); border-top-color:#FFB536; animation:bxSpin 900ms linear infinite;"></span>
+              <span style="font-size:.96rem; font-weight:700; color:var(--bx-muted,#9CB1C9);">טוען את עמוד התשלום המאובטח…</span>
+            </div>
+          </sc-if>
+          <sc-if value="{{ payBlocked }}">
+            <div style="position:absolute; inset:0; z-index:3; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:24px; text-align:center; background:linear-gradient(180deg,#071628,#03070D);">
+              <span style="font-size:1.02rem; font-weight:800; color:var(--bx-text,#F4F7FB);">עמוד התשלום אינו נטען בתוך האתר</span>
+              <span style="max-width:44ch; font-size:.94rem; line-height:1.7; color:var(--bx-muted,#9CB1C9);">ספק הסליקה חוסם הצגה בחלון מוטמע. אפשר להמשיך לתשלום בעמוד המאובטח של Cardcom.</span>
+              <a href="{{ lnkPay }}" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:13px 26px; border-radius:999px; background:linear-gradient(135deg,#FFB020,#F28C18); color:#2A1500; font-weight:800; text-decoration:none;" style-hover="filter:brightness(1.08); text-decoration:none; color:#2A1500">מעבר לעמוד התשלום<span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">נפתח בלשונית חדשה באתר חיצוני</span></a>
+            </div>
+          </sc-if>
+          <iframe ref="{{ payFrameRef }}" onLoad="{{ onPayLoad }}" src="https://secure.cardcom.solutions/EA/EA5/eS4cNB3tCUGYzXv7WwF7Jw/Order" title="תשלום מאובטח באמצעות Cardcom" allow="payment" referrerpolicy="strict-origin-when-cross-origin" style="display:block; width:100%; height:100%; border:0;"></iframe>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
   <sc-if value="{{ modalOpen }}">
     <div onClick="{{ onBackdrop }}" style="position:fixed; inset:0; z-index:3000; display:flex; align-items:center; justify-content:center; padding:16px; background:rgba(2,5,10,.78); backdrop-filter:blur(10px);">
       <div ref="{{ dialogRef }}" role="dialog" aria-modal="true" aria-labelledby="bx-modal-title" onClick="{{ stopClick }}" style="width:min(700px,100%); max-height:88vh; overflow:auto; padding:clamp(20px,3.4vw,34px); border-radius:26px; border:1px solid var(--bx-border,rgba(11,132,216,.24)); background:linear-gradient(180deg,#081a2e,#03070D); box-shadow:0 34px 90px rgba(0,0,0,.78);">
@@ -610,12 +643,12 @@ button{font:inherit}
                 </span>
                 <span>לתיאום שיחת אבחון ב WhatsApp</span><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">נפתח בלשונית חדשה באתר חיצוני</span>
               </a>
-              <a href="{{ lnkPay }}" target="_blank" rel="noopener noreferrer" style="position:relative; display:flex; align-items:center; gap:14px; width:100%; min-height:60px; padding:12px 16px; border-radius:16px; border:1px solid rgba(0,0,0,.16); background:linear-gradient(135deg,#FFB020 0%,#F28C18 100%); color:#FFFFFF; font-weight:800; font-size:1.02rem; box-shadow:0 8px 22px rgba(0,0,0,.34); transition:filter .3s ease, border-color .3s ease, box-shadow .3s ease; color:#2A1500;" style-hover="filter:brightness(1.08); border-color:rgba(0,0,0,.3); box-shadow:0 10px 28px rgba(242,140,24,.4), 0 0 0 3px rgba(255,176,32,.22); color:#2A1500" style-active="filter:brightness(.94)">
+              <button type="button" onClick="{{ openPay }}" style="position:relative; display:flex; align-items:center; gap:14px; width:100%; font-family:inherit; text-align:start; cursor:pointer; min-height:60px; padding:12px 16px; border-radius:16px; border:1px solid rgba(0,0,0,.16); background:linear-gradient(135deg,#FFB020 0%,#F28C18 100%); color:#FFFFFF; font-weight:800; font-size:1.02rem; box-shadow:0 8px 22px rgba(0,0,0,.34); transition:filter .3s ease, border-color .3s ease, box-shadow .3s ease; color:#2A1500;" style-hover="filter:brightness(1.08); border-color:rgba(0,0,0,.3); box-shadow:0 10px 28px rgba(242,140,24,.4), 0 0 0 3px rgba(255,176,32,.22); color:#2A1500" style-active="filter:brightness(.94)">
                 <span aria-hidden="true" style="flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:12px; background:rgba(42,21,0,.14);">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A1500" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10.5V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h6.5"></path><line x1="3" y1="10.5" x2="21" y2="10.5"></line><rect x="14.5" y="14" width="7" height="6" rx="1.3"></rect><path d="M16.4 14v-1.4a1.6 1.6 0 0 1 3.2 0V14"></path></svg>
                 </span>
-                <span>מעבר מאובטח לתשלום</span><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">נפתח בלשונית חדשה באתר חיצוני</span>
-              </a>
+                <span>מעבר מאובטח לתשלום</span><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">נפתח בחלון תשלום מאובטח בתוך האתר</span>
+              </button>
               <p style="margin:2px 0 0; font-size:.86rem; color:rgba(156,177,201,.9);">התשלום מתבצע באתר סליקה חיצוני מאובטח.</p>
             </div>
             <div style="display:grid; gap:10px; grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr)); margin-top:16px;">
@@ -653,10 +686,9 @@ button{font:inherit}
             </ul>
             <h3 style="margin:20px 0 8px; font-size:1.04rem; font-weight:800;">מגבלות ידועות</h3>
             <p style="margin:0 0 12px; font-size:.99rem; line-height:1.75; color:var(--bx-muted,#9CB1C9);">האתר לא עבר ביקורת נגישות מקצועית חיצונית, ואיננו מתחייבים לתאימות מלאה לכל טכנולוגיה מסייעת או לכל דפדפן. תכנים ושירותים חיצוניים, בהם טפסי Google, וואטסאפ ומערכת הסליקה, אינם בשליטתנו ואינם מכוסים בהצהרה זו.</p>
-            <p style="margin:0 0 18px; font-size:.95rem; color:rgba(156,177,201,.9);">תאריך עדכון אחרון של ההצהרה: <strong style="color:var(--bx-text,#F4F7FB);">12 באוגוסט 2026</strong></p>
+            <p style="margin:0 0 18px; font-size:.95rem; color:rgba(156,177,201,.9);">תאריך עדכון אחרון של ההצהרה: <strong style="color:var(--bx-text,#F4F7FB);">16 באוגוסט 2026</strong></p>
             <h3 style="margin:0 0 10px; font-size:1.04rem; font-weight:800;">נתקלתם בבעיה?</h3>
             <a href="{{ lnkWaA11y }}" target="_blank" rel="noopener noreferrer" style="position:relative; display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:13px 24px; border-radius:999px; background:linear-gradient(135deg,#F47A18,#FFB536); color:#0A0500; font-weight:800;" style-hover="color:#0A0500">דיווח על בעיית נגישות בוואטסאפ<span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">נפתח בלשונית חדשה באתר חיצוני</span></a>
-            <p style="margin:14px 0 0; font-size:.95rem; line-height:1.8; color:var(--bx-muted,#9CB1C9);">אפשר גם בטלפון <a href="{{ telHref }}" style="direction:ltr; unicode-bidi:embed; font-weight:700;">054-875-1484</a>.</p>
           </div>
         </sc-if>
 
@@ -664,7 +696,7 @@ button{font:inherit}
           <div>
             <ul style="margin:0; padding:0 18px 0 0; list-style:disc; display:grid; gap:10px; font-size:1rem; line-height:1.75; color:var(--bx-muted,#9CB1C9);">
               <li>האתר עצמו אינו אוסף ואינו שומר מידע מטפסים. אין באתר טופס פנימי ששולח נתונים לשרת.</li>
-              <li>שאלוני Google Forms, וואטסאפ ומערכת הסליקה Cardcom הם שירותים חיצוניים, ונפתחים בלשונית נפרדת.</li>
+              <li>שאלוני Google Forms ווואטסאפ הם שירותים חיצוניים ונפתחים בלשונית נפרדת. מערכת הסליקה Cardcom מוצגת בחלון מאובטח בתוך האתר, אך היא שירות חיצוני לכל דבר.</li>
               <li>מידע שנמסר בשירותים החיצוניים כפוף למדיניות הפרטיות ולתנאי השימוש שלהם.</li>
               <li>באתר לא הוטמעו קובצי cookie, כלי אנליטיקה או כלי מעקב.</li>
               <li>העדפות הנגישות שלך נשמרות בדפדפן שלך בלבד ואינן נשלחות לשום מקום.</li>
@@ -732,6 +764,7 @@ class Component extends DCLogic {
   dialogRef = React.createRef(); closeBtnRef = React.createRef(); panelRef = React.createRef();
   a11yBtnRef = React.createRef();
   flexRef = React.createRef();
+  payRef = React.createRef(); payCloseRef = React.createRef(); payFrameRef = React.createRef();
 
   a11yInit = (typeof window !== 'undefined') ? loadA11y() : Object.assign({}, DEFAULT_A11Y);
   reduced = (typeof window !== 'undefined' && window.matchMedia) ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
@@ -741,6 +774,7 @@ class Component extends DCLogic {
     a11y: this.a11yInit,
     intro: (this.props.enableIntro !== false) && !this.a11yInit.skipIntro,
     menuOpen: false, panelOpen: false, modal: null, speaking: false,
+    payOpen: false, payLoading: false, payBlocked: false,
     isMobile: (typeof window !== 'undefined') ? window.innerWidth < 1024 : false
   };
 
@@ -804,6 +838,7 @@ class Component extends DCLogic {
   }
 
   componentWillUnmount() {
+    if (this.payTimeout) clearTimeout(this.payTimeout);
     (this.timers || []).forEach(clearTimeout);
     if (this.introFailsafe) clearTimeout(this.introFailsafe);
     if (this.whoRO) this.whoRO.disconnect();
@@ -944,6 +979,7 @@ class Component extends DCLogic {
 
   onKey = (e) => {
     if (e.key === 'Escape') {
+      if (this.state.payOpen) { this.closePay(); return; }
       if (this.state.intro) { this.skipIntro(); return; }
       if (this.state.modal) { this.closeModal(); return; }
       if (this.state.panelOpen) { this.closePanel(); return; }
@@ -951,7 +987,8 @@ class Component extends DCLogic {
       return;
     }
     if (e.key !== 'Tab') return;
-    const host = this.state.modal ? this.dialogRef.current : (this.state.panelOpen ? this.panelRef.current : null);
+    const host = this.state.payOpen ? this.payRef.current
+      : (this.state.modal ? this.dialogRef.current : (this.state.panelOpen ? this.panelRef.current : null));
     if (!host) return;
     const f = Array.prototype.filter.call(
       host.querySelectorAll('a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'),
@@ -1565,6 +1602,37 @@ class Component extends DCLogic {
   };
   closePanel = () => this.setState({ panelOpen: false }, () => { const b = this.a11yBtnRef.current; if (b) b.focus(); });
 
+  /* Cardcom's own hosted order page, shown in an iframe inside the site.
+     No card data touches this page: the fields, validation and submission all
+     live inside Cardcom's document, which this origin cannot read or script. */
+  openPay = () => {
+    if (this.state.payOpen) return;
+    this.lastPayFocus = document.activeElement;
+    document.body.style.overflow = 'hidden';
+    if (this.payTimeout) clearTimeout(this.payTimeout);
+    this.setState({ payOpen: true, payLoading: true, payBlocked: false, menuOpen: false, panelOpen: false, modal: null }, () => {
+      setTimeout(() => { const b = this.payCloseRef.current; if (b) b.focus(); }, 20);
+      /* a frame that never reports a load is almost certainly refused by
+         X-Frame-Options / CSP; offer the hosted page instead of failing silently */
+      this.payTimeout = setTimeout(() => {
+        if (this.state.payOpen && this.state.payLoading) this.setState({ payLoading: false, payBlocked: true });
+      }, 12000);
+    });
+  };
+  onPayLoad = () => {
+    if (this.payTimeout) { clearTimeout(this.payTimeout); this.payTimeout = null; }
+    if (this.state.payOpen) this.setState({ payLoading: false });
+  };
+  closePay = () => {
+    if (this.payTimeout) { clearTimeout(this.payTimeout); this.payTimeout = null; }
+    document.body.style.overflow = '';
+    const f = this.lastPayFocus;
+    /* unmounting the iframe drops the session, so reopening always starts clean */
+    this.setState({ payOpen: false, payLoading: false, payBlocked: false }, () => {
+      if (f && f.focus) { try { f.focus(); } catch (e) {} }
+    });
+  };
+
   openModal(kind) {
     this.lastFocus = document.activeElement;
     document.body.style.overflow = 'hidden';
@@ -1908,6 +1976,9 @@ class Component extends DCLogic {
       introT1Ref: this.introT1Ref, introT2Ref: this.introT2Ref,
       dialogRef: this.dialogRef, closeBtnRef: this.closeBtnRef, panelRef: this.panelRef, a11yBtnRef: this.a11yBtnRef,
       flexRef: this.flexRef,
+      payRef: this.payRef, payCloseRef: this.payCloseRef, payFrameRef: this.payFrameRef,
+      payOpen: this.state.payOpen, payLoading: this.state.payLoading, payBlocked: this.state.payBlocked,
+      openPay: this.openPay, closePay: this.closePay, onPayLoad: this.onPayLoad,
 
       lnkInfo: c.links.info.url, lnkQuiz: c.links.quiz.url, lnkWa: c.links.whatsapp.url,
       lnkWaA11y: (c.links.whatsappAccessibility && c.links.whatsappAccessibility.url) || WA_A11Y_URL,
