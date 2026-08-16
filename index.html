@@ -33,6 +33,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
+<link rel="preload" as="image" href="./assets/cursor/orbit-reactor/cursor-default-32.png">
+<link rel="preload" as="image" href="./assets/cursor/orbit-reactor/cursor-hover-32.png">
+<link rel="preload" as="image" href="./assets/cursor/orbit-reactor/cursor-click-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap">
@@ -52,7 +55,7 @@ a:hover{color:#F47A18;text-decoration:underline}
 button{font:inherit}
 :focus-visible{outline:3px solid #FFB536;outline-offset:3px;border-radius:8px}
 ::selection{background:#0B84D8;color:#03070D}
-@media (pointer:fine){html,body{cursor:url("./assets/biomix-cursor-32.png") 2 2, auto}a,button,input,select,textarea,summary,[role="button"]{cursor:url("./assets/biomix-cursor-32.png") 2 2, pointer}}
+@media (hover:hover) and (pointer:fine){html,body{cursor:url("./assets/cursor/orbit-reactor/cursor-default-32.png") 2 2, auto !important}:is(a[href],button,summary,label[for],[role="button"],[onclick],[data-open-biomix-payment],input[type="submit"],input[type="button"],input[type="reset"],select):not(:disabled):not([aria-disabled="true"]),:is(a[href],button,summary,label[for],[role="button"],[onclick],[data-open-biomix-payment],input[type="submit"],input[type="button"],input[type="reset"],select):not(:disabled):not([aria-disabled="true"]) *{cursor:url("./assets/cursor/orbit-reactor/cursor-hover-32.png") 2 2, pointer !important}html.cursor-is-clicking,html.cursor-is-clicking body,html.cursor-is-clicking body *{cursor:url("./assets/cursor/orbit-reactor/cursor-click-32.png") 2 2, pointer !important}input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]),textarea,[contenteditable="true"]{cursor:text !important}button:disabled,input:disabled,select:disabled,textarea:disabled,[aria-disabled="true"]{cursor:not-allowed !important}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
 @keyframes bxSpin{to{transform:rotate(360deg)}}
 @keyframes bxSpinC{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
@@ -606,7 +609,7 @@ button{font:inherit}
               <a href="{{ lnkPay }}" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:13px 26px; border-radius:999px; background:linear-gradient(135deg,#FFB020,#F28C18); color:#2A1500; font-weight:800; text-decoration:none;" style-hover="filter:brightness(1.08); text-decoration:none; color:#2A1500">מעבר לעמוד התשלום<span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">נפתח בלשונית חדשה באתר חיצוני</span></a>
             </div>
           </sc-if>
-          <iframe ref="{{ payFrameRef }}" onLoad="{{ onPayLoad }}" src="https://secure.cardcom.solutions/EA/EA5/eS4cNB3tCUGYzXv7WwF7Jw/Order" title="תשלום מאובטח באמצעות Cardcom" allow="payment" referrerpolicy="strict-origin-when-cross-origin" style="display:block; width:100%; height:100%; border:0;"></iframe>
+          <iframe ref="{{ payFrameRef }}" src="https://secure.cardcom.solutions/EA/EA5/eS4cNB3tCUGYzXv7WwF7Jw/Order" title="תשלום מאובטח באמצעות Cardcom" allow="payment" referrerpolicy="strict-origin-when-cross-origin" style="display:block; width:100%; height:100%; border:0;"></iframe>
         </div>
       </div>
     </div>
@@ -801,6 +804,10 @@ class Component extends DCLogic {
     document.addEventListener('keydown', this.onKey);
     document.addEventListener('visibilitychange', this.onVis);
     document.addEventListener('click', this.onHashClick);
+    document.addEventListener('pointerdown', this.onPointerDown, { passive: true });
+    document.addEventListener('pointerup', this.onPointerUp, { passive: true });
+    document.addEventListener('pointercancel', this.onPointerUp, { passive: true });
+    window.addEventListener('blur', this.onPointerUp);
     this.stripHash();
     this.startAmbient();
     this.setupWhoArrows();
@@ -837,6 +844,31 @@ class Component extends DCLogic {
     try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
   }
 
+  CURSOR_HIT = 'a[href],button,summary,label[for],[role="button"],[onclick],[data-open-biomix-payment],input[type="submit"],input[type="button"],input[type="reset"],select';
+
+  /* Purely cosmetic: listeners are passive and never call preventDefault or
+     stopPropagation, so every button and link behaves exactly as before. */
+  onPointerDown = (e) => {
+    if (e.pointerType === 'touch') return;
+    const t = e.target;
+    if (!t || !t.closest) return;
+    const hit = t.closest(this.CURSOR_HIT);
+    if (!hit || hit.disabled || hit.getAttribute('aria-disabled') === 'true') return;
+    document.documentElement.classList.add('cursor-is-clicking');
+    this.clickHeldAt = performance.now();
+    if (this.clickRelease) { clearTimeout(this.clickRelease); this.clickRelease = null; }
+  };
+  onPointerUp = () => {
+    if (!document.documentElement.classList.contains('cursor-is-clicking')) return;
+    const held = performance.now() - (this.clickHeldAt || 0);
+    const wait = Math.max(0, 120 - held);
+    if (this.clickRelease) clearTimeout(this.clickRelease);
+    this.clickRelease = setTimeout(() => {
+      document.documentElement.classList.remove('cursor-is-clicking');
+      this.clickRelease = null;
+    }, wait);
+  };
+
   componentWillUnmount() {
     if (this.payTimeout) clearTimeout(this.payTimeout);
     (this.timers || []).forEach(clearTimeout);
@@ -848,6 +880,12 @@ class Component extends DCLogic {
     document.removeEventListener('keydown', this.onKey);
     document.removeEventListener('visibilitychange', this.onVis);
     document.removeEventListener('click', this.onHashClick);
+    document.removeEventListener('pointerdown', this.onPointerDown);
+    document.removeEventListener('pointerup', this.onPointerUp);
+    document.removeEventListener('pointercancel', this.onPointerUp);
+    window.removeEventListener('blur', this.onPointerUp);
+    if (this.clickRelease) clearTimeout(this.clickRelease);
+    document.documentElement.classList.remove('cursor-is-clicking');
     if (this.mq) { if (this.mq.removeEventListener) this.mq.removeEventListener('change', this.onMq); else this.mq.removeListener(this.onMq); }
     if (this.io) this.io.disconnect();
     this.stopAmbient(); this.stopIntroField();
@@ -1611,6 +1649,8 @@ class Component extends DCLogic {
     document.body.style.overflow = 'hidden';
     if (this.payTimeout) clearTimeout(this.payTimeout);
     this.setState({ payOpen: true, payLoading: true, payBlocked: false, menuOpen: false, panelOpen: false, modal: null }, () => {
+      const fr = this.payFrameRef.current;
+      if (fr) fr.addEventListener('load', this.onPayLoad);
       setTimeout(() => { const b = this.payCloseRef.current; if (b) b.focus(); }, 20);
       /* a frame that never reports a load is almost certainly refused by
          X-Frame-Options / CSP; offer the hosted page instead of failing silently */
@@ -1625,6 +1665,8 @@ class Component extends DCLogic {
   };
   closePay = () => {
     if (this.payTimeout) { clearTimeout(this.payTimeout); this.payTimeout = null; }
+    const fr = this.payFrameRef.current;
+    if (fr) fr.removeEventListener('load', this.onPayLoad);
     document.body.style.overflow = '';
     const f = this.lastPayFocus;
     /* unmounting the iframe drops the session, so reopening always starts clean */
@@ -1981,7 +2023,7 @@ class Component extends DCLogic {
       flexRef: this.flexRef,
       payRef: this.payRef, payCloseRef: this.payCloseRef, payFrameRef: this.payFrameRef,
       payOpen: this.state.payOpen, payLoading: this.state.payLoading, payBlocked: this.state.payBlocked,
-      openPay: this.openPay, closePay: this.closePay, onPayLoad: this.onPayLoad,
+      openPay: this.openPay, closePay: this.closePay,
 
       lnkInfo: c.links.info.url, lnkWa: c.links.whatsapp.url,
       lnkWaA11y: (c.links.whatsappAccessibility && c.links.whatsappAccessibility.url) || WA_A11Y_URL,
