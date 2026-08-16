@@ -114,7 +114,7 @@ button{font:inherit}
       <a href="#who" data-nav="who" onClick="{{ closeMenu }}" style="position:relative; display:flex; align-items:center; gap:11px; min-height:48px; padding:12px 14px; border-radius:12px; border:1px solid transparent; background:transparent; color:var(--bx-text,#F4F7FB); font-weight:700;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9.6" cy="8" r="4.4"></circle><path d="M17.4 21a7.8 7.8 0 0 0-15.6 0"></path><path d="M22 20.2c0-3.1-1.8-6-3.7-7.4a4.6 4.6 0 0 0-.4-7.6"></path></svg><span>למי זה מתאים</span></a>
       <a href="#method" data-nav="method" onClick="{{ closeMenu }}" style="position:relative; display:flex; align-items:center; gap:11px; min-height:48px; padding:12px 14px; border-radius:12px; border:1px solid transparent; background:transparent; color:var(--bx-text,#F4F7FB); font-weight:700;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.8c0 4.2 8 5 8 9.2s-8 5-8 9.2"></path><path d="M16 2.8c0 4.2-8 5-8 9.2s8 5 8 9.2"></path><path d="M8.9 6.4h6.2M8.9 17.6h6.2"></path></svg><span>השיטה</span></a>
       <a href="#about" data-nav="about" onClick="{{ closeMenu }}" style="position:relative; display:flex; align-items:center; gap:11px; min-height:48px; padding:12px 14px; border-radius:12px; border:1px solid transparent; background:transparent; color:var(--bx-text,#F4F7FB); font-weight:700;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7.8" r="4.6"></circle><path d="M20 21a8 8 0 0 0-16 0"></path></svg><span>על יאיר</span></a>
-      <a href="{{ lnkQuiz }}" target="_blank" rel="noopener noreferrer" onClick="{{ closeMenu }}" style="position:relative; display:flex; align-items:center; justify-content:center; min-height:50px; margin-top:6px; padding:13px 18px; border-radius:999px; background:linear-gradient(135deg,#F47A18,#FFB536); color:#0A0500; font-weight:800;" style-hover="color:#0A0500">בדקו אם השיטה מתאימה לכם<span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">נפתח בלשונית חדשה באתר חיצוני</span></a>
+      <a href="#quiz" onClick="{{ closeMenu }}" style="position:relative; display:flex; align-items:center; justify-content:center; min-height:50px; margin-top:6px; padding:13px 18px; border-radius:999px; background:linear-gradient(135deg,#F47A18,#FFB536); color:#0A0500; font-weight:800;" style-hover="color:#0A0500">בדקו אם השיטה מתאימה לכם</a>
     </nav>
   </sc-if>
 
@@ -332,7 +332,7 @@ button{font:inherit}
         <h2 id="bx-quote" data-reveal style="margin:0; font-size:clamp(1.6rem,4.6vw,3rem); font-weight:900; line-height:1.26; text-wrap:balance;">״לא צריך מוטיבציה.<br>צריך תכנית שמתאימה לחיים שלך.״</h2>
         <p data-reveal data-reveal-delay="130" style="margin:22px auto 0; max-width:52ch; font-size:1.05rem; line-height:var(--bx-lh,1.75); color:var(--bx-muted,#9CB1C9);">השאלון הקצר הוא נקודת ההתחלה. ממנו מבינים אם התהליך מתאים לך, ומה השלב הראשון.</p>
         <div data-reveal data-reveal-delay="210" style="margin-top:34px;">
-          <a href="{{ lnkQuiz }}" target="_blank" rel="noopener noreferrer" style="position:relative; display:inline-flex; align-items:center; justify-content:center; min-height:56px; padding:16px 34px; border-radius:999px; background:linear-gradient(110deg,#F47A18 0%,#FFB536 44%,#FFF6E4 50%,#FFB536 56%,#F47A18 100%); background-size:280% 100%; background-position:100% 0; color:#0A0500; font-weight:800; font-size:1.06rem; box-shadow:0 0 0 1px rgba(255,181,54,.5), 0 14px 40px rgba(244,122,24,.32); transition:background-position 1s cubic-bezier(.2,.8,.2,1), transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;" style-hover="background-position:0 0; transform:translateY(-3px); box-shadow:0 0 0 1px rgba(255,181,54,.8), 0 22px 54px rgba(244,122,24,.48); color:#0A0500" style-active="transform:translateY(-1px) scale(.985)">בדקו אם השיטה מתאימה לכם</a>
+          <a href="#quiz" style="position:relative; display:inline-flex; align-items:center; justify-content:center; min-height:56px; padding:16px 34px; border-radius:999px; background:linear-gradient(110deg,#F47A18 0%,#FFB536 44%,#FFF6E4 50%,#FFB536 56%,#F47A18 100%); background-size:280% 100%; background-position:100% 0; color:#0A0500; font-weight:800; font-size:1.06rem; box-shadow:0 0 0 1px rgba(255,181,54,.5), 0 14px 40px rgba(244,122,24,.32); transition:background-position 1s cubic-bezier(.2,.8,.2,1), transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;" style-hover="background-position:0 0; transform:translateY(-3px); box-shadow:0 0 0 1px rgba(255,181,54,.8), 0 22px 54px rgba(244,122,24,.48); color:#0A0500" style-active="transform:translateY(-1px) scale(.985)">בדקו אם השיטה מתאימה לכם</a>
         </div>
       </div>
     </section>
@@ -695,13 +695,15 @@ button{font:inherit}
         <sc-if value="{{ isPrivacy }}">
           <div>
             <ul style="margin:0; padding:0 18px 0 0; list-style:disc; display:grid; gap:10px; font-size:1rem; line-height:1.75; color:var(--bx-muted,#9CB1C9);">
-              <li>האתר עצמו אינו אוסף ואינו שומר מידע מטפסים. אין באתר טופס פנימי ששולח נתונים לשרת.</li>
-              <li>שאלוני Google Forms ווואטסאפ הם שירותים חיצוניים ונפתחים בלשונית נפרדת. מערכת הסליקה Cardcom מוצגת בחלון מאובטח בתוך האתר, אך היא שירות חיצוני לכל דבר.</li>
-              <li>מידע שנמסר בשירותים החיצוניים כפוף למדיניות הפרטיות ולתנאי השימוש שלהם.</li>
+              <li>שאלון ההתאמה שבאתר נשלח ישירות לשירות הטפסים החיצוני Formspree, שמעביר את התשובות לתיבת הדואר של יאיר. האתר עצמו אינו מאחסן את התשובות ואינו שומר אותן בדפדפן.</li>
+              <li>בשאלון נמסרים שם, טלפון, גיל ומטרת האימון. אין למסור בו מידע רפואי, ואין למסור פרטי אשראי.</li>
+              <li>וואטסאפ הוא שירות חיצוני ונפתח בלשונית נפרדת. מערכת הסליקה Cardcom מוצגת בחלון מאובטח בתוך האתר, אך היא שירות חיצוני לכל דבר.</li>
+              <li>מידע שנמסר בשירותים החיצוניים — Formspree, וואטסאפ ו־Cardcom — כפוף למדיניות הפרטיות ולתנאי השימוש שלהם.</li>
+              <li>פרטי אשראי נמסרים אך ורק בתוך עמוד הסליקה של Cardcom. לאתר אין גישה אליהם והוא אינו רואה, קורא או שומר אותם.</li>
               <li>באתר לא הוטמעו קובצי cookie, כלי אנליטיקה או כלי מעקב.</li>
               <li>העדפות הנגישות שלך נשמרות בדפדפן שלך בלבד ואינן נשלחות לשום מקום.</li>
             </ul>
-            <p style="margin:18px 0 0; font-size:.95rem; line-height:1.8; color:rgba(156,177,201,.9);">לשאלות בנושא אפשר לפנות אלינו בוואטסאפ או בטלפון <a href="{{ telHref }}" style="direction:ltr; unicode-bidi:embed; font-weight:700;">054-875-1484</a>.</p>
+            <p style="margin:18px 0 0; font-size:.95rem; line-height:1.8; color:rgba(156,177,201,.9);">לשאלות בנושא פרטיות אפשר לפנות אלינו בוואטסאפ.</p>
           </div>
         </sc-if>
       </div>
@@ -726,10 +728,8 @@ const WA_A11Y_URL = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent
 const FALLBACK = {
   links: {
     info: { url: 'https://697d2965a5a62.site123.me/' },
-    quiz: { url: 'https://forms.gle/ZxTgqYRpboy8AqkJ7' },
     whatsapp: { url: WA_URL },
     whatsappAccessibility: { url: WA_A11Y_URL },
-    newTrainee: { url: 'https://docs.google.com/forms/d/e/1FAIpQLScNs8ZjFHGAtD5wcQCmTeD21dUTWeeAYEt0YgcMUufiiS4rIw/viewform' },
     payment: { url: 'https://secure.cardcom.solutions/EA/EA5/eS4cNB3tCUGYzXv7WwF7Jw/Order' },
     instagram: { url: 'https://instagram.com/yair_shani_biomix' },
     facebook: { url: 'https://www.facebook.com/yair.shani.2025' }
@@ -1707,7 +1707,7 @@ class Component extends DCLogic {
     const O = this._whoOrig;
     const OUTER = mobile ? '1fr' : O.cols;
     const PAIR = mobile ? '1fr 1fr' : O.pair;
-    const ROWGAP = mobile ? '58px' : O.rowGap;
+    const ROWGAP = mobile ? '74px' : O.rowGap;
     if (grid.style.gridTemplateColumns !== OUTER) grid.style.gridTemplateColumns = OUTER;
     if (grid.style.rowGap !== ROWGAP) grid.style.rowGap = ROWGAP;
     grid.querySelectorAll('[data-who-block]').forEach((b) => {
@@ -1741,7 +1741,10 @@ class Component extends DCLogic {
           const el = grid.querySelector('[data-who-card="' + k + '"]');
           if (!el) return null;
           const b = el.getBoundingClientRect();
-          return { k: k, cx: b.left - gb.left + b.width / 2, edge: (pair.dir < 0 ? b.bottom : b.top) - gb.top };
+          const l = b.left - gb.left, r = b.right - gb.left, mid = l + b.width / 2;
+          const inner = mid < cx ? r : l;
+          const aim = inner + (mid < cx ? -1 : 1) * Math.min(b.width * 0.3, 46);
+          return { k: k, cx: aim, edge: (pair.dir < 0 ? b.bottom : b.top) - gb.top };
         }).filter(Boolean);
         if (!boxes.length) return;
         const d0 = pair.dir;
@@ -1752,13 +1755,13 @@ class Component extends DCLogic {
         const target = edge - d0 * END_GAP;
         const span = (target - stemFrom) * d0;
         if (span < 26) return;
-        const fork = stemFrom + d0 * span * 0.42;
+        const fork = stemFrom + d0 * span * 0.3;
         boxes.forEach((o) => {
           const color = (this.WHO_ARROWS.find((w) => w.key === o.k) || {}).color || '#38C6F4';
           const d = 'M' + cx.toFixed(1) + ' ' + stemFrom.toFixed(1) +
                     ' L' + cx.toFixed(1) + ' ' + fork.toFixed(1) +
-                    ' C' + cx.toFixed(1) + ' ' + (fork + d0 * 14).toFixed(1) +
-                    ' ' + o.cx.toFixed(1) + ' ' + (target - d0 * 20).toFixed(1) +
+                    ' C' + cx.toFixed(1) + ' ' + (fork + d0 * 18).toFixed(1) +
+                    ' ' + o.cx.toFixed(1) + ' ' + (target - d0 * 26).toFixed(1) +
                     ' ' + o.cx.toFixed(1) + ' ' + target.toFixed(1);
           const HL = 8, HW = 4.2;
           const head = 'M' + (o.cx - HW).toFixed(1) + ' ' + (target - d0 * HL).toFixed(1) +
@@ -1980,9 +1983,9 @@ class Component extends DCLogic {
       payOpen: this.state.payOpen, payLoading: this.state.payLoading, payBlocked: this.state.payBlocked,
       openPay: this.openPay, closePay: this.closePay, onPayLoad: this.onPayLoad,
 
-      lnkInfo: c.links.info.url, lnkQuiz: c.links.quiz.url, lnkWa: c.links.whatsapp.url,
+      lnkInfo: c.links.info.url, lnkWa: c.links.whatsapp.url,
       lnkWaA11y: (c.links.whatsappAccessibility && c.links.whatsappAccessibility.url) || WA_A11Y_URL,
-      lnkNew: c.links.newTrainee.url, lnkPay: c.links.payment.url,
+      lnkPay: c.links.payment.url,
       lnkIg: c.links.instagram.url, lnkFb: c.links.facebook.url,
       telHref: c.site.phoneHref,
 

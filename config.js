@@ -36,10 +36,7 @@
         title: 'מידע נוסף על שיטת BioMix',
         url: 'https://697d2965a5a62.site123.me/'
       },
-      quiz: {
-        title: 'מתחילים כאן – שאלון התאמה וייעוץ',
-        url: 'https://forms.gle/ZxTgqYRpboy8AqkJ7'
-      },
+
       whatsapp: {
         title: 'לתיאום שיחת אבחון בוואטסאפ',
         number: whatsappNumber,
@@ -51,11 +48,7 @@
         message: whatsappA11yMessage,
         url: whatsappA11yUrl
       },
-      newTrainee: {
-        title: 'למתאמנים חדשים – שאלון פתיחת תהליך',
-        /* כתובת ציבורית למילוי בלבד. אין לפרסם את כתובת ה־/edit שמופיעה ב־Linktree. */
-        url: 'https://docs.google.com/forms/d/e/1FAIpQLScNs8ZjFHGAtD5wcQCmTeD21dUTWeeAYEt0YgcMUufiiS4rIw/viewform'
-      },
+
       payment: {
         title: 'מעבר מאובטח לתשלום',
         url: 'https://secure.cardcom.solutions/EA/EA5/eS4cNB3tCUGYzXv7WwF7Jw/Order',
@@ -71,8 +64,12 @@
       }
     },
 
-    /* הערות מקור בלבד — אינן בשימוש באתר. */
+    /* הערות מקור בלבד — אינן בשימוש באתר.
+       שאלוני Google Forms הוחלפו בשאלון ההתאמה שנמצא בתוך האתר עצמו
+       ונשלח ל־Formspree. הכתובות נשמרות כאן לתיעוד בלבד. */
     sourceOnly: {
+      googleFormQuiz: 'https://forms.gle/ZxTgqYRpboy8AqkJ7',
+      googleFormNewTrainee: 'https://docs.google.com/forms/d/e/1FAIpQLScNs8ZjFHGAtD5wcQCmTeD21dUTWeeAYEt0YgcMUufiiS4rIw/viewform',
       whatsappApiFromLinktree: 'https://api.whatsapp.com/send?phone=9720548751484',
       whatsappQrFromLinktree: 'https://wa.me/qr/RB2Q4L3VCM7BF1'
     }
